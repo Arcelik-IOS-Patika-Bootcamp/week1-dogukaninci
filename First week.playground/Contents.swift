@@ -63,3 +63,34 @@ for car in cars {
         car.speedUp()
     }
 }
+
+//Optionals
+var age: Int? = nil // it might have no value, optional
+age = 38
+var numb = 8
+var result = 0
+  for number in 1...numb {
+    result *= number
+  }
+print(result)
+var name: String? = nil
+if let unwrapped = name { //Optional Binding
+    print("\(unwrapped.count) letters")
+} else{
+    print("Missing name")
+}
+
+func greet(_ name: String?){
+    guard let unwrapped = name else {
+        print("You didn't provide a name!")
+        return
+    }
+    print("Hello \(unwrapped)!")
+}
+greet("Taylor")
+
+let str = "5"
+let num = Int(str)! // Force unwrapping
+
+let age2: Int! = nil // Implicitly unwrapped optionals
+let age3 = age2 //no longer need ! sign
