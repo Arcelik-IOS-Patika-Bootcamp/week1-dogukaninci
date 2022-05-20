@@ -17,4 +17,33 @@ class Animal {
     }
 }
 
+class Dog: Animal {
+    var trainingFor: String
+    
+    init(name: String, color: ColorType, trainingFor: String) {
+        self.trainingFor = trainingFor
+        super.init(name: name, color: color)
+    }
+    override func makeNoise() {
+        print("Bow Wow")
+    }
+}
+class Cat: Animal {
+    var whiskersColor: ColorType
+    
+    init(name: String, color: ColorType, whiskersColor: ColorType) {
+        self.whiskersColor = whiskersColor
+        super.init(name: name, color: color)
+    }
+    override func makeNoise() {
+        print("Meow")
+    }
+}
 
+var karabas = Dog(name: "Karabas", color: .black, trainingFor: "Home")
+print("\(karabas.name)'s noise is ", terminator: "")
+karabas.makeNoise()
+
+var ginny = Cat(name: "Ginny", color: .yellow, whiskersColor: .white)
+print("\(ginny.color) \(ginny.name) with \(ginny.whiskersColor) whiskers noise is ", terminator: "")
+ginny.makeNoise()
