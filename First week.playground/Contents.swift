@@ -47,3 +47,19 @@ karabas.makeNoise()
 var ginny = Cat(name: "Ginny", color: .yellow, whiskersColor: .white)
 print("\(ginny.color) \(ginny.name) with \(ginny.whiskersColor) whiskers noise is ", terminator: "")
 ginny.makeNoise()
+
+// Type Casting
+class Car { }
+class Mercedes: Car { }
+class Renault: Car {
+    func speedUp(){
+        print("speed increased!")
+    }
+}
+let cars = [Mercedes(), Renault(), Mercedes(), Renault()]
+
+for car in cars {
+    if let car = car as? Renault{ //Typecasting
+        car.speedUp()
+    }
+}
